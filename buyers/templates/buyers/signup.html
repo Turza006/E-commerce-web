@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>shadow world</title>
+
+
+    <link rel = "icon" href="" type = "image/png"/>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        img.card-img-top{
+            height: 300px !important;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+
+</head>
+<body  style="background-image: linear-gradient(90deg, #ffd194, #70c1f5 )">
+<header>
+    <nav class="navbar navbar-expand " style="background-color: transparent" >
+        <a class="navbar-brand" href="{% url 'login' %}" style="color: black">
+        <img height = "60" weidth = "60" src="" class = "d-inline-block alighn-top" />
+            <p6>Shadow World </p6></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="">help </a>
+                </li>
+
+
+
+                <li>
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+    <section class="jumbotron text-center" style="background-color: transparent">
+        <div class="container">
+            {% if error %}
+                {{ error }}
+                <br/>
+                <br/>
+            {% endif %}
+            <h1>Sign Up!</h1>
+
+            <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                Username:
+                <br />
+                <input type="text" name="username" />
+                <br />
+                Email:
+                <br />
+                <input type="text" name="email" />
+                <br />
+                Number:
+                <br />
+                <input type="text" name="number" />
+                <br />
+
+
+                Password:
+                <br />
+                <input type="password" name="password1" />
+                <br />
+                Confirm Password:
+                <br />
+                <input type="password" name="password2" />
+                <br />
+                <br />
+                <input class="btn btn-primary" type="submit" value="Sign Up!" />
+            </form>
+
+
+
+
+        </div>
+    </section>
+
+
+<footer class="text-muted">
+    <div class="container text-right">
+        <p style="color: black">© Probal Datta Turza {% now "Y" %}</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
