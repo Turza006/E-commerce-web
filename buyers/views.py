@@ -14,10 +14,8 @@ def signup(request):
                 user = User.objects.get(username=request.POST['username'])
                 return render(request, 'buyers/signup.html', {'error': 'Username has already been taken'})
             except User.DoesNotExist:
-                user = User.objects.create_user(request.POST['username'], password=request.POST['password2'],email=request.POST['email',blank=True,null = True],number=request.POST['number',blank=True,null=True])
+                user = User.objects.create_user(request.POST['username'], password=request.POST['password2'])
                 auth.login(request, user)
-           
-           
                 return redirect('home')
         else:
             return render(request, 'buyers/signup.html', {'error': 'Passwords must match'})
